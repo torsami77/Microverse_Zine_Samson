@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>Fork Me! FCC: Test Suite Template</title>
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -12,29 +13,137 @@
   <header id="header">
     <img id="header-img" alt="product logo" src="https://i.imgur.com/C4ybi3h.png" />
     <nav id="nav-bar">
-      <a href="#pricing-section" class="nav-link">Pricing</a>
-      <a href="#products-section" class="nav-link">Products</a>
-      <a href="#support-section" class="nav-link">Support</a>
+      <div id="links-parent">
+        <a href="#how-it-works-section" class="nav-link">How It Works</a>
+        <a href="#products-section" class="nav-link">Products</a>
+        <a href="#support-section" class="nav-link">Support</a>
+      </div>
     </nav>
   </header>
   <form id="form" action="https://www.freecodecamp.com/email-submit" method="post">
     <label id="email-label">Subscribe to our newsletter for the latest updates</label>
-    <input type="email" id="email" name="email" placeholder="Enter Your E-mail Address" required/>
+    <input type="email" id="email" name="email" placeholder="Enter Your E-mail Address" required />
     <input type="submit" id="submit" value="Subscribe" />
   </form>
-  <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/78cny7zCkzk" frameborder="0"
+  
+  <div class="section">
+    <label id="how-it-works-section" class="section_title">How It Works</label>
+    <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/78cny7zCkzk" frameborder="0"
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-  <div id="pricing-section">
-
   </div>
-  <div id="products-section">
-
+  <div class="section">
+    <label id="products-section" class="section_title">Our Products</label>
+    <div class="card_holder">
+      <div class="card">
+        <img class="card_image" src="images/headphone1.jpg" />
+        <label class="card_description">Surface Headphones</label>
+        <label class="card_price">$39.00</label>
+        <a href="#" class="order">Order now</a>
+      </div>
+      <div class="card">
+        <img class="card_image" src="images/headphone2.jpg" />
+        <label class="card_description">Logiix Base</label>
+        <label class="card_price">$49.99</label>
+        <a href="#" class="order">Order now</a>
+      </div>
+      <div class="card">
+        <img class="card_image" src="images/headphone3.jpg" />
+        <label class="card_description">Headphones headset wireless</label>
+        <label class="card_price">$14.75</label>
+        <a href="#" class="order">Order now</a>
+      </div>
+    </div>
+    <div class="card_holder">
+      <div class="card">
+        <img class="card_image" src="images/headphone4.webp" />
+        <label class="card_description">Recon 70</label>
+        <label class="card_price">$39.95</label>
+        <a href="#" class="order">Order now</a>
+      </div>
+      <div class="card">
+        <img class="card_image" src="images/headphone5.jpg" />
+        <label class="card_description">RZE-G902H</label>
+        <label class="card_price">$120.27</label>
+        <a href="#" class="order">Order now</a>
+      </div>
+      <div class="card">
+        <img class="card_image" src="images/headphone6.jpg" />
+        <label class="card_description">PDP LVL50</label>
+        <label class="card_price">$14.75</label>
+        <a href="#" class="order">Order now</a>
+      </div>
+    </div>
   </div>
-  <div id="support-section">
-
+  <div class="section">
+    <label id="support-section" class="section_title">Support</label>
+    <div class="item_holder">
+      <div class="item">
+        <span class="item_icon material-icons">
+          forum
+        </span>
+        <label>Forums</label>
+      </div>
+      <div class="item">
+        <span class="item_icon material-icons">
+          campaign
+        </span>
+        <label>News</label>
+      </div>
+    </div>
   </div>
   <script src="js/index.js"></script>
 </body>
 
 </html>
+
+<style>
+  #header {
+    height: 64px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 10px 10px 0 rgb(0, 0, 0, .3);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+    background: white;
+  }
+
+  @media (max-width: 600px) {
+    #nav-bar {
+      height: 40px;
+      width: 40px;
+      margin-right: 20px;
+      background-image: url('images/menu.svg');
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+      position: relative;
+    }
+
+    #links-parent {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 150px;
+      background: white;
+      box-shadow: 0 0 5px 0 rgb(0, 0, 0, .5);
+      padding: 15px;
+      cursor: default;
+      opacity: 0;
+      pointer-events: none;
+      transition: all .2s ease-in-out;
+    }
+
+    .nav-link+.nav-link {
+      margin-top: 15px;
+    }
+
+    #nav-bar:hover>#links-parent {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+</style>

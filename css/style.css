@@ -3,16 +3,7 @@ body {
     margin: 0;
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-#header {
-    height: 64px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 10px 10px 0 rgb(0,0,0,.3);
-    margin-bottom: 30px;
+    padding-top: 80px;
 }
 
 #header-img {
@@ -28,6 +19,11 @@ body {
     text-align: center;
     font-size: large;
     letter-spacing: 2px;
+    transition: all .2s;
+}
+
+.nav-link:hover {
+    letter-spacing: 4px;
 }
 
 form {
@@ -36,11 +32,11 @@ form {
 
 form>input {
     border-radius: 5px;
-    border: 1px solid  gray;
+    border: 1px solid gray;
     padding: 10px;
 }
 
-input[type='email']{
+input[type='email'] {
     min-width: 200px;
 }
 
@@ -59,3 +55,110 @@ input[type='email']{
     text-align: center;
     margin-bottom: 20px;
 }
+
+.section {
+    min-height: 100px;
+}
+
+.section+.section {
+    margin-top: 50px;
+}
+
+.section_title {
+    font-size: x-large;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+}
+
+.card_holder {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.card_holder+.card_holder {
+    margin-top: 20px;
+}
+
+.card {
+    width: 30%;
+    height: 200px;
+    box-shadow: 0 0 5px 0 black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 200px;
+}
+
+.card_image {
+    width: 100px;
+    height: 100px;
+}
+
+.card_description {
+    font-size: smaller;
+}
+
+.card_price {
+    font-weight: bold;
+}
+
+.order {
+    font-size: smaller;
+    text-decoration: none;
+}
+
+.item_holder {
+    display: inline-block;
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+.item {
+    display: inline-flex;
+    width: calc(49% - 42px);
+    padding: 15px;
+    border: 1px solid gray;
+    height: 48px;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+    position: relative;
+}
+
+.item_icon {
+    font-size: 40px !important;
+    z-index: 1;
+}
+
+.item > label {
+    z-index: 1;
+}
+
+.item, .item *,.item::before {
+    transition: all .3s;
+}
+
+.item::before {
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 0%;
+    background: black;
+    z-index: 0;
+}
+
+.item:hover::before {
+    height: 100%;
+}
+
+.item:hover * {
+    color: white;
+}
+
