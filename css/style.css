@@ -29,3 +29,13 @@ body {
     font-size: large;
     letter-spacing: 2px;
 }
+
+form {
+    margin: 50px 20px;
+}
+
+form>input {
+    border-radius: 5px;
+    border: 1px solid  gray;
+    padding: 10px;
+}
