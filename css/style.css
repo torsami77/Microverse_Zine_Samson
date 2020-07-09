@@ -72,6 +72,13 @@ input[type='email'] {
     text-align: center;
 }
 
+#video {
+    width: 100vw;
+    max-width: 500px;
+    height: calc(100vw * 0.5625);
+    max-height: 281.25px;
+}
+
 .card_holder {
     display: flex;
     align-items: center;
